@@ -6,6 +6,7 @@ After=default.target
 Type=simple
 ExecStart=%h/framework/grabber/itpm start
 ExecStop=%h/framework/grabber/itpm stop
+RemainAfterExit=yes
 Restart=on-failure
 
 [Install]
