@@ -3,9 +3,10 @@ Description=Service to run ITPM grabber script at startup
 After=default.target
 
 [Service]
-Type=simple
+Type=forking
 ExecStart=%h/framework/grabber/itpm start
 ExecStop=%h/framework/grabber/itpm stop
+ExecReload=%h/framework/grabber/itpm update
 RemainAfterExit=yes
 Restart=on-failure
 
