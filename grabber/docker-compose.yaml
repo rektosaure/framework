@@ -1,7 +1,7 @@
 services:
   sharpitpm:
     container_name: sharpitpm_live
-    image: "necksus/sharpitpm:latest"
+    image: "necksus/sharpitpm.arm:latest"
     volumes:
       - "~/itpm:/data"
     ports:
