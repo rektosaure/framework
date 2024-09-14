@@ -1,0 +1,12 @@
+[Unit]
+Description=Service to run ITPM grabber script at startup
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=%h/framework/grabber/itpm start
+ExecStop=%h/framework/grabber/itpm stop
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
