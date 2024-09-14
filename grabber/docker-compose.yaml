@@ -1,0 +1,8 @@
+services:
+  sharpitpm:
+    container_name: sharpitpm_live
+    image: "necksus/sharpitpm:latest"
+    volumes:
+      - "~/itpm/data:/data"
+    ports:
+      - "1337:80"
