@@ -3,20 +3,20 @@
 do_start() {
   echo -e "\nDocker > Starting ITPM utility ..."
   systemctl is-active --quiet docker || systemctl --user start docker
-  docker compose -f docker-compose.yaml up -d
+  docker compose -f ~/framework/grabber/docker-compose.yaml up -d
   echo "http://localhost:1337/swagger"
 }
 
 do_stop() {
   echo -e "\nDocker > Stopping ITPM utility ..."
-  docker compose -f docker-compose.yaml down
+  docker compose -f ~/framework/grabber/docker-compose.yaml down
   systemctl --user stop docker
 }
 
 do_update() {
   echo -e "\nDocker > Updating ITPM utility ..."
   systemctl is-active --quiet docker || systemctl --user start docker
-  docker compose -f docker-compose.yaml pull
+  docker compose -f ~/framework/grabber/docker-compose.yaml pull
 }
 
 case "$1" in
