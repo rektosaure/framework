@@ -1,0 +1,2676 @@
+{
+    "SEC_CIK": [
+        {
+            "Header": "CIK",
+            "Ticker": "https://www.sec.gov/include/ticker.txt",
+            "Source": "sec",
+            "Frequency": null,
+            "Offset": null
+        }
+    ],
+    "CORPORATE_BONDS": [
+        {
+            "Header": "10Y",
+            "Ticker": "DGS10",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "AAA",
+            "Ticker": "BAMLC0A1CAAAEY",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "BBB",
+            "Ticker": "BAMLC0A4CBBBEY",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "CCC",
+            "Ticker": "BAMLH0A3HYCEY",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "BONDS_D": [
+        {
+            "Header": "TLT",
+            "Ticker": "TLT",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "SHY",
+            "Ticker": "SHY",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "LQD",
+            "Ticker": "LQD",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "JNK",
+            "Ticker": "JNK",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "HYG",
+            "Ticker": "HYG",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "BONDS_W": [
+        {
+            "Header": "TLT",
+            "Ticker": "TLT",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SHY",
+            "Ticker": "SHY",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "LQD",
+            "Ticker": "LQD",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "JNK",
+            "Ticker": "JNK",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "HYG",
+            "Ticker": "HYG",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ],
+    "BONDS_M": [
+        {
+            "Header": "TLT",
+            "Ticker": "TLT",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "SHY",
+            "Ticker": "SHY",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "LQD",
+            "Ticker": "LQD",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "JNK",
+            "Ticker": "JNK",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "HYG",
+            "Ticker": "HYG",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "BONDS_Q": [
+        {
+            "Header": "TLT",
+            "Ticker": "TLT",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "SHY",
+            "Ticker": "SHY",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "LQD",
+            "Ticker": "LQD",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "JNK",
+            "Ticker": "JNK",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "HYG",
+            "Ticker": "HYG",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        }
+    ],
+    "INDICES_D": [
+        {
+            "Header": "SP500",
+            "Ticker": "%5EGSPC",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "DOWJONES",
+            "Ticker": "%5EDJI",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "NASDAQ100",
+            "Ticker": "%5ENDX",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "RUSSEL2000",
+            "Ticker": "%5ERUT",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "EUROSTOXX50",
+            "Ticker": "%5ESTOXX50E",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "FTSE100",
+            "Ticker": "%5EFTSE",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "CAC40",
+            "Ticker": "%5EFCHI",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "DAX40",
+            "Ticker": "%5EGDAXI",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "HSI",
+            "Ticker": "%5EHSI",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "NIKKEI225",
+            "Ticker": "%5EN225",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "ASX200",
+            "Ticker": "%5EAXAT",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "NIFTY50",
+            "Ticker": "%5ENSEI",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "SHENZHEN",
+            "Ticker": "399001.SZ",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "INDICES_W": [
+        {
+            "Header": "SP500",
+            "Ticker": "%5EGSPC",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "DOWJONES",
+            "Ticker": "%5EDJI",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NASDAQ100",
+            "Ticker": "%5ENDX",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "RUSSEL2000",
+            "Ticker": "%5ERUT",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "EUROSTOXX50",
+            "Ticker": "%5ESTOXX50E",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "FTSE100",
+            "Ticker": "%5EFTSE",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "CAC40",
+            "Ticker": "%5EFCHI",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "DAX40",
+            "Ticker": "%5EGDAXI",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "HSI",
+            "Ticker": "%5EHSI",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NIKKEI225",
+            "Ticker": "%5EN225",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ASX200",
+            "Ticker": "%5EAXAT",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NIFTY50",
+            "Ticker": "%5ENSEI",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SHENZHEN",
+            "Ticker": "399001.SZ",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ],
+    "INDICES_M": [
+        {
+            "Header": "SP500",
+            "Ticker": "%5EGSPC",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "DOWJONES",
+            "Ticker": "%5EDJI",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "NASDAQ100",
+            "Ticker": "%5ENDX",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "RUSSEL2000",
+            "Ticker": "%5ERUT",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "EUROSTOXX50",
+            "Ticker": "%5ESTOXX50E",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "FTSE100",
+            "Ticker": "%5EFTSE",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "CAC40",
+            "Ticker": "%5EFCHI",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "DAX40",
+            "Ticker": "%5EGDAXI",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "HSI",
+            "Ticker": "%5EHSI",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "NIKKEI225",
+            "Ticker": "%5EN225",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ASX200",
+            "Ticker": "%5EAXAT",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "NIFTY50",
+            "Ticker": "%5ENSEI",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "SHENZHEN",
+            "Ticker": "399001.SZ",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "INDICES_Q": [
+        {
+            "Header": "SP500",
+            "Ticker": "%5EGSPC",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "DOWJONES",
+            "Ticker": "%5EDJI",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "NASDAQ100",
+            "Ticker": "%5ENDX",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "RUSSEL2000",
+            "Ticker": "%5ERUT",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "EUROSTOXX50",
+            "Ticker": "%5ESTOXX50E",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "FTSE100",
+            "Ticker": "%5EFTSE",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "CAC40",
+            "Ticker": "%5EFCHI",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "DAX40",
+            "Ticker": "%5EGDAXI",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "HSI",
+            "Ticker": "%5EHSI",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "NIKKEI225",
+            "Ticker": "%5EN225",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "ASX200",
+            "Ticker": "%5EAXAT",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "NIFTY50",
+            "Ticker": "%5ENSEI",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "SHENZHEN",
+            "Ticker": "399001.SZ",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        }
+    ],
+    "COMMODITIES_D": [
+        {
+            "Header": "WTI",
+            "Ticker": "CL%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "BRENT",
+            "Ticker": "BZ%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "NATGAS",
+            "Ticker": "NG%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "HEATING OIL",
+            "Ticker": "HO%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "ETHANOL",
+            "Ticker": "CU%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "GOLD",
+            "Ticker": "GC%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "SILVER",
+            "Ticker": "SI%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "PLATINUM",
+            "Ticker": "PL%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "PALLADIUM",
+            "Ticker": "PA%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "ALUMINUM",
+            "Ticker": "ALI%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "COPPER",
+            "Ticker": "HG%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "IRON ORE",
+            "Ticker": "HRC%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "CORN",
+            "Ticker": "ZC%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "OAT",
+            "Ticker": "ZO%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "ROUGH RICE",
+            "Ticker": "ZR%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "SOYBEAN",
+            "Ticker": "ZS%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "WHEAT",
+            "Ticker": "KE%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "COCOA",
+            "Ticker": "CC%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "COFFEE",
+            "Ticker": "KC%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "COTTON",
+            "Ticker": "CT%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "SUGAR",
+            "Ticker": "SB%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "ORANGE JUICE",
+            "Ticker": "OJ%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "LUMBER",
+            "Ticker": "LBS%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "LEAN HOGS",
+            "Ticker": "HE%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "LIVE CATTLE",
+            "Ticker": "LE%3DF",
+            "Source": "yfinance",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "COMMODITIES_W": [
+        {
+            "Header": "WTI",
+            "Ticker": "CL%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "BRENT",
+            "Ticker": "BZ%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NATGAS",
+            "Ticker": "NG%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "HEATING OIL",
+            "Ticker": "HO%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ETHANOL",
+            "Ticker": "CU%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "GOLD",
+            "Ticker": "GC%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SILVER",
+            "Ticker": "SI%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "PLATINUM",
+            "Ticker": "PL%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "PALLADIUM",
+            "Ticker": "PA%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ALUMINUM",
+            "Ticker": "ALI%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "COPPER",
+            "Ticker": "HG%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "IRON ORE",
+            "Ticker": "HRC%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "CORN",
+            "Ticker": "ZC%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "OAT",
+            "Ticker": "ZO%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ROUGH RICE",
+            "Ticker": "ZR%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SOYBEAN",
+            "Ticker": "ZS%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "WHEAT",
+            "Ticker": "KE%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "COCOA",
+            "Ticker": "CC%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "COFFEE",
+            "Ticker": "KC%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "COTTON",
+            "Ticker": "CT%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SUGAR",
+            "Ticker": "SB%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ORANGE JUICE",
+            "Ticker": "OJ%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "LUMBER",
+            "Ticker": "LBS%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "LEAN HOGS",
+            "Ticker": "HE%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "LIVE CATTLE",
+            "Ticker": "LE%3DF",
+            "Source": "yfinance",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ],
+    "COMMODITIES_M": [
+        {
+            "Header": "WTI",
+            "Ticker": "CL%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "BRENT",
+            "Ticker": "BZ%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "NATGAS",
+            "Ticker": "NG%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "HEATING OIL",
+            "Ticker": "HO%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ETHANOL",
+            "Ticker": "CU%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "GOLD",
+            "Ticker": "GC%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "SILVER",
+            "Ticker": "SI%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "PLATINUM",
+            "Ticker": "PL%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "PALLADIUM",
+            "Ticker": "PA%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ALUMINUM",
+            "Ticker": "ALI%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "COPPER",
+            "Ticker": "HG%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IRON ORE",
+            "Ticker": "HRC%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "CORN",
+            "Ticker": "ZC%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "OAT",
+            "Ticker": "ZO%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ROUGH RICE",
+            "Ticker": "ZR%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "SOYBEAN",
+            "Ticker": "ZS%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "WHEAT",
+            "Ticker": "KE%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "COCOA",
+            "Ticker": "CC%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "COFFEE",
+            "Ticker": "KC%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "COTTON",
+            "Ticker": "CT%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "SUGAR",
+            "Ticker": "SB%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ORANGE JUICE",
+            "Ticker": "OJ%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "LUMBER",
+            "Ticker": "LBS%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "LEAN HOGS",
+            "Ticker": "HE%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "LIVE CATTLE",
+            "Ticker": "LE%3DF",
+            "Source": "yfinance",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "COMMODITIES_Q": [
+        {
+            "Header": "WTI",
+            "Ticker": "CL%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "BRENT",
+            "Ticker": "BZ%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "NATGAS",
+            "Ticker": "NG%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "HEATING OIL",
+            "Ticker": "HO%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "ETHANOL",
+            "Ticker": "CU%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "GOLD",
+            "Ticker": "GC%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "SILVER",
+            "Ticker": "SI%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "PLATINUM",
+            "Ticker": "PL%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "PALLADIUM",
+            "Ticker": "PA%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "ALUMINUM",
+            "Ticker": "ALI%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "COPPER",
+            "Ticker": "HG%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "IRON ORE",
+            "Ticker": "HRC%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "CORN",
+            "Ticker": "ZC%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "OAT",
+            "Ticker": "ZO%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "ROUGH RICE",
+            "Ticker": "ZR%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "SOYBEAN",
+            "Ticker": "ZS%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "WHEAT",
+            "Ticker": "KE%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "COCOA",
+            "Ticker": "CC%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "COFFEE",
+            "Ticker": "KC%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "COTTON",
+            "Ticker": "CT%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "SUGAR",
+            "Ticker": "SB%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "ORANGE JUICE",
+            "Ticker": "OJ%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "LUMBER",
+            "Ticker": "LBS%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "LEAN HOGS",
+            "Ticker": "HE%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "LIVE CATTLE",
+            "Ticker": "LE%3DF",
+            "Source": "yfinance",
+            "Frequency": "Q",
+            "Offset": null
+        }
+    ],
+    "FED": [
+        {
+            "Header": "Federal Funds Effective Rate",
+            "Ticker": "DFF",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "Federal Funds Target Range - Upper Limit",
+            "Ticker": "DFEDTARU",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "Federal Funds Target Range - Lower Limit",
+            "Ticker": "DFEDTARL",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "FOMC Projections for Real GDP Growth , Central Tendency, Midpoint",
+            "Ticker": "GDPC1CTM",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "FOMC Projections for Real GDP Growth , Median",
+            "Ticker": "GDPC1MD",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "Total Assets",
+            "Ticker": "WALCL",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ],
+    "USA_YIELD-CURVE": [
+        {
+            "Header": "Fed Funds",
+            "Ticker": "FF",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "1 Month",
+            "Ticker": "WGS1MO",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "3 Month",
+            "Ticker": "WGS3MO",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "6 Month",
+            "Ticker": "WGS6MO",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "1 Year",
+            "Ticker": "WGS1YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "2 Year",
+            "Ticker": "WGS2YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "3 Year",
+            "Ticker": "WGS3YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "5 Year",
+            "Ticker": "WGS5YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "7 Year",
+            "Ticker": "WGS7YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "10 Year",
+            "Ticker": "WGS10YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "20 Year",
+            "Ticker": "WGS20YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "30 Year",
+            "Ticker": "WGS30YR",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "5 Year TIPS",
+            "Ticker": "WFII5",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "7 Year TIPS",
+            "Ticker": "WFII7",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "10 Year TIPS",
+            "Ticker": "WFII10",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "20 Year TIPS",
+            "Ticker": "WFII20",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "30 Year TIPS",
+            "Ticker": "WFII30",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ],
+    "USA_MONEY-SUPPLY": [
+        {
+            "Header": "Nominal M2",
+            "Ticker": "M2SL",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Real M2",
+            "Ticker": "M2REAL",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Total Assets",
+            "Ticker": "WALCL",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "Overnight REPO",
+            "Ticker": "RRPONTSYD",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "USA_CONSTRUCTION": [
+        {
+            "Header": "PERMIT",
+            "Ticker": "PERMIT",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "HOUST",
+            "Ticker": "HOUST",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "COMPUTSA",
+            "Ticker": "COMPUTSA",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_INFLATION": [
+        {
+            "Header": "CPI",
+            "Ticker": "CPIAUCSL",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "CoreCPI",
+            "Ticker": "CPILFESL",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "PCE",
+            "Ticker": "PCEPI",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "CorePCE",
+            "Ticker": "PCEPILFE",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "PPI",
+            "Ticker": "PPIACO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_LABOUR-MARKET": [
+        {
+            "Header": "ICSA",
+            "Ticker": "ICSA",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "CCSA",
+            "Ticker": "CCSA",
+            "Source": "fred",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "UNRATE",
+            "Ticker": "UNRATE",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "PAYEMS",
+            "Ticker": "PAYEMS",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USGOVT",
+            "Ticker": "USGOVT",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USPRIV",
+            "Ticker": "USPRIV",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USGOOD",
+            "Ticker": "USGOOD",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "SRVPRD",
+            "Ticker": "SRVPRD",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USCONS",
+            "Ticker": "USCONS",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "MANEMP",
+            "Ticker": "MANEMP",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USTPU",
+            "Ticker": "USTPU",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USFIRE",
+            "Ticker": "USFIRE",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "USPBS",
+            "Ticker": "USPBS",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "U6RATE",
+            "Ticker": "U6RATE",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_INDUSTRIAL-PRODUCTION": [
+        {
+            "Header": "INDPRO",
+            "Ticker": "INDPRO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPMAN",
+            "Ticker": "IPMAN",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG311A2S",
+            "Ticker": "IPG311A2S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG313A4S",
+            "Ticker": "IPG313A4S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG325S",
+            "Ticker": "IPG325S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG326S",
+            "Ticker": "IPG326S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG315A6S",
+            "Ticker": "IPG315A6S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG321S",
+            "Ticker": "IPG321S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG322S",
+            "Ticker": "IPG322S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG323S",
+            "Ticker": "IPG323S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG324S",
+            "Ticker": "IPG324S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG331S",
+            "Ticker": "IPG331S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG332S",
+            "Ticker": "IPG332S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG333S",
+            "Ticker": "IPG333S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG334S",
+            "Ticker": "IPG334S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG335S",
+            "Ticker": "IPG335S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG3361T3S",
+            "Ticker": "IPG3361T3S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG3364T9N",
+            "Ticker": "IPG3364T9N",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG337S",
+            "Ticker": "IPG337S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "IPG339S",
+            "Ticker": "IPG339S",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_DURABLE-GOODS": [
+        {
+            "Header": "DGORDER",
+            "Ticker": "DGORDER",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ADXTNO",
+            "Ticker": "ADXTNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "ADXDNO",
+            "Ticker": "ADXDNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A34SNO",
+            "Ticker": "A34SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A35SNO",
+            "Ticker": "A35SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A33SNO",
+            "Ticker": "A33SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A32SNO",
+            "Ticker": "A32SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A31SNO",
+            "Ticker": "A31SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A36SNO",
+            "Ticker": "A36SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "A37SNO",
+            "Ticker": "A37SNO",
+            "Source": "fred",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_HOUSEHOLD-DEBT": [
+        {
+            "Header": "HDTGPDUSQ163N",
+            "Ticker": "HDTGPDUSQ163N",
+            "Source": "fred",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "TDSP",
+            "Ticker": "TDSP",
+            "Source": "fred",
+            "Frequency": "Q",
+            "Offset": null
+        },
+        {
+            "Header": "HHMSDODNS",
+            "Ticker": "HHMSDODNS",
+            "Source": "fred",
+            "Frequency": "Q",
+            "Offset": null
+        }
+    ],
+    "USD_TWI": [
+        {
+            "Header": "DTWEXBGS",
+            "Ticker": "DTWEXBGS",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "DTWEXAFEGS",
+            "Ticker": "DTWEXAFEGS",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "DTWEXEMEGS",
+            "Ticker": "DTWEXEMEGS",
+            "Source": "fred",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "USA_PMI": [
+        {
+            "Header": "PMI",
+            "Ticker": "173",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "New Orders",
+            "Ticker": "1483",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Employment",
+            "Ticker": "1046",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Prices",
+            "Ticker": "174",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Production",
+            "Ticker": "I:ISMMPISM",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Deliveries",
+            "Ticker": "I:ISMMDI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Inventories",
+            "Ticker": "I:ISMMIISM",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Customer Inventories",
+            "Ticker": "I:ISMMCII",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Order Backlog",
+            "Ticker": "I:ISMMBI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Exports",
+            "Ticker": "I:ISMMEIUM",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Imports",
+            "Ticker": "I:ISMMII",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_NMI": [
+        {
+            "Header": "NMI",
+            "Ticker": "176",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Business Activity",
+            "Ticker": "1484",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "New Orders",
+            "Ticker": "1050",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Employment",
+            "Ticker": "1048",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Deliveries",
+            "Ticker": "I:ISMNMDI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Inventories",
+            "Ticker": "I:ISMNMISM",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Inventory Sentiment",
+            "Ticker": "I:ISMNMISI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Order Backlog",
+            "Ticker": "I:ISMNMBI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Prices",
+            "Ticker": "I:ISMNMPI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Exports",
+            "Ticker": "I:ISMNMESM",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Imports",
+            "Ticker": "I:ISMNMII",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_UMCSI": [
+        {
+            "Header": "UMCSI",
+            "Ticker": "320",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Expectations Index",
+            "Ticker": "900",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Conditions Index",
+            "Ticker": "901",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_SBO": [
+        {
+            "Header": "SBO",
+            "Ticker": "537",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "Uncertainty",
+            "Ticker": "I:SBUI",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Expansion",
+            "Ticker": "I:SBOE",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Business Conditions",
+            "Ticker": "I:SBOBC",
+            "Source": "ycharts",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Plan to increase employment",
+            "Ticker": "XXX",
+            "Source": "empty",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Now a Good Time to Expand",
+            "Ticker": "XXX",
+            "Source": "empty",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Plan to increase inventory",
+            "Ticker": "XXX",
+            "Source": "empty",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Expect Economy to Improve",
+            "Ticker": "XXX",
+            "Source": "empty",
+            "Frequency": "M",
+            "Offset": null
+        },
+        {
+            "Header": "Expect real sales higher",
+            "Ticker": "XXX",
+            "Source": "empty",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_VOLATILITY_D": [
+        {
+            "Header": "SPX",
+            "Ticker": "TVC:SPX",
+            "Source": "tradingview",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "TVC:VIX",
+            "Source": "tradingview",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "VIX3M",
+            "Ticker": "CBOE:VIX3M",
+            "Source": "tradingview",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "VX1",
+            "Ticker": "CBOE:VX1!",
+            "Source": "tradingview",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "VX2",
+            "Ticker": "CBOE:VX2!",
+            "Source": "tradingview",
+            "Frequency": "D",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance_full",
+            "Frequency": "D",
+            "Offset": null
+        }
+    ],
+    "USA_VOLATILITY_W": [
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance_full",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ],
+    "USA_VOLATILITY_M": [
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance_full",
+            "Frequency": "M",
+            "Offset": null
+        }
+    ],
+    "USA_VOLATILITY_Q": [
+        {
+            "Header": "VIX",
+            "Ticker": "%5EVIX",
+            "Source": "yfinance_full",
+            "Frequency": "Q",
+            "Offset": null
+        }
+    ],
+    "WORLD_PMI": [
+        {
+            "Header": "USA",
+            "Ticker": "829",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "EA",
+            "Ticker": "201",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "JPN",
+            "Ticker": "202",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "AUS",
+            "Ticker": "1838",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "CAN",
+            "Ticker": "1029",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "NZL",
+            "Ticker": "338",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "NOR",
+            "Ticker": "642",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "SWE",
+            "Ticker": "798",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "CHE",
+            "Ticker": "278",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "GBR",
+            "Ticker": "204",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "BRA",
+            "Ticker": "1476",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "RUS",
+            "Ticker": "1630",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "IND",
+            "Ticker": "754",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "CHN",
+            "Ticker": "753",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "CHN-NBS",
+            "Ticker": "594",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "DEU",
+            "Ticker": "136",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "FRA",
+            "Ticker": "340",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "ITA",
+            "Ticker": "832",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "ESP",
+            "Ticker": "667",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        }
+    ],
+    "WORLD_NMI": [
+        {
+            "Header": "USA",
+            "Ticker": "1062",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "EA",
+            "Ticker": "272",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "JPN",
+            "Ticker": "1912",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "AUS",
+            "Ticker": "1839",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "NZL",
+            "Ticker": "910",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "SWE",
+            "Ticker": "1513",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "GBR",
+            "Ticker": "274",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "BRA",
+            "Ticker": "1477",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "RUS",
+            "Ticker": "1629",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "IND",
+            "Ticker": "598",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "CHN",
+            "Ticker": "596",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "CHN-NBS",
+            "Ticker": "831",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "DEU",
+            "Ticker": "140",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "FRA",
+            "Ticker": "341",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "ITA",
+            "Ticker": "833",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        },
+        {
+            "Header": "ESP",
+            "Ticker": "668",
+            "Source": "investing",
+            "Frequency": "M",
+            "Offset": -1
+        }
+    ],
+    "COT": [
+        {
+            "Header": "GOLD",
+            "Ticker": "088691",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SILVER",
+            "Ticker": "084691",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "PLATINUM",
+            "Ticker": "076651",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "PALLADIUM",
+            "Ticker": "075651",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "COPPER",
+            "Ticker": "085692",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ALUMINIUM",
+            "Ticker": "191696",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "STEEL",
+            "Ticker": "192651",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "LITHIUM",
+            "Ticker": "189691",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "CRUDE OIL WTI",
+            "Ticker": "067411",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "CRUDE OIL BRENT",
+            "Ticker": "06765T",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "HEATING OIL",
+            "Ticker": "022651",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NAT GAS",
+            "Ticker": "023651",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "S&P 500",
+            "Ticker": "13874+",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "DJIA",
+            "Ticker": "12460+",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NASDAQ 100",
+            "Ticker": "20974+",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "RUSSELL 2000",
+            "Ticker": "239742",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "VIX",
+            "Ticker": "1170E1",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "AUSTRALIAN DOLLAR",
+            "Ticker": "232741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "BRITISH POUND STERLING",
+            "Ticker": "096742",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "CANADIAN DOLLAR",
+            "Ticker": "090741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "EURO FX",
+            "Ticker": "099741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "JAPANESE YEN",
+            "Ticker": "097741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "SWISS FRANC",
+            "Ticker": "092741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "U.S. DOLLAR INDEX",
+            "Ticker": "098662",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "MEXICAN PESO",
+            "Ticker": "095741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "NEW ZEALAND DOLLAR",
+            "Ticker": "112741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "BITCOIN",
+            "Ticker": "133741",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        },
+        {
+            "Header": "ETHEREUM",
+            "Ticker": "146021",
+            "Source": "cftc",
+            "Frequency": "W",
+            "Offset": null
+        }
+    ]
+}
