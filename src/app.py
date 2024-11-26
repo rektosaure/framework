@@ -21,35 +21,34 @@ def load_tickers(tickers_url):
         raise ValueError(f"Erreur lors du téléchargement de tickers.json: Status Code {response.status_code}")
 
 def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_folder):
-    # Configurer le logger
+    # Configurer le logger pour afficher uniquement dans la console
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler("logs/app.log"),
             logging.StreamHandler()
         ]
     )
     logger = logging.getLogger("App")
     
-    try:
-        # Charger les tickers depuis l'URL
-        tickers = load_tickers(tickers_url)
-        logger.info("Tickers chargés avec succès.")
+    while True:
+        logger.info("Début du processus de téléchargement et de traitement des données.")
         
-        # Configurer les paramètres GitHub
-        github_uploader = GitHubUploader(
-            repo_owner=gitrepo_owner,
-            repo_name=gitrepo_name,
-            repo_token=gitrepo_authkey
-        )
-        
-        # Initialiser les autres composants
-        data_processor = DataProcessor()
-        data_saver = DataSaver("data")
-        
-        while True:
-            logger.info("Début du processus de téléchargement et de traitement des données.")
+        try:
+            # Charger les tickers depuis l'URL
+            tickers = load_tickers(tickers_url)
+            logger.info("Tickers chargés avec succès.")
+            
+            # Configurer les paramètres GitHub
+            github_uploader = GitHubUploader(
+                repo_owner=gitrepo_owner,
+                repo_name=gitrepo_name,
+                repo_token=gitrepo_authkey
+            )
+            
+            # Initialiser les autres composants
+            data_processor = DataProcessor()
+            data_saver = DataSaver("data")
             
             # Créer le répertoire de sortie
             if os.path.exists("data"):
@@ -58,6 +57,7 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
                     logger.info("Répertoire 'data' supprimé.")
                 except Exception as e:
                     logger.error(f"Erreur lors de la suppression du répertoire 'data': {e}")
+                    # Continue l'exécution même si la suppression échoue
             
             os.makedirs("data", exist_ok=True)
             logger.info("Répertoire 'data' créé.")
@@ -107,16 +107,22 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
                 logger.info("Fichiers CSV uploadés avec succès sur GitHub.")
             except Exception as e:
                 logger.error(f"Erreur lors de l'upload sur GitHub: {e}")
-            
-            # Pause avant la prochaine exécution
-            sleep_duration = 6 * 3600  # 6 heures en secondes
-            variation = random.randint(-900, 900)  # ±15 minutes en secondes
-            total_sleep = sleep_duration + variation
-            logger.info(f"Pause de {total_sleep/3600:.2f} heures avant la prochaine exécution.")
-            time.sleep(total_sleep)
-    
-    except Exception as e:
-        logger.error(f"Erreur critique dans l'application: {e}")
+        
+        finally:
+            # Supprimer le répertoire 'data/' après l'exécution, qu'il y ait eu une exception ou non
+            try:
+                if os.path.exists("data"):
+                    shutil.rmtree("data")
+                    logger.info("Répertoire 'data' supprimé après l'exécution.")
+            except Exception as e:
+                logger.error(f"Erreur lors de la suppression du répertoire 'data' après l'exécution: {e}")
+        
+        # Pause avant la prochaine exécution
+        sleep_duration = 6 * 3600  # 6 heures en secondes
+        variation = random.randint(-900, 900)  # ±15 minutes en secondes
+        total_sleep = sleep_duration + variation
+        logger.info(f"Pause de {total_sleep/3600:.2f} heures avant la prochaine exécution.")
+        time.sleep(total_sleep)
 
 if __name__ == "__main__":
     import sys
