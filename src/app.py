@@ -1,5 +1,3 @@
-# src/app.py
-
 import logging
 import shutil
 import os
@@ -16,7 +14,15 @@ def configure_logging():
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
-def main(git_repo_path):
+def main(tickers_url, git_repo_path, github_auth_key):
+    """
+    Fonction principale pour télécharger, traiter, sauvegarder les données et les uploader sur GitHub.
+
+    Args:
+        tickers_url (str): URL du fichier JSON des tickers.
+        git_repo_path (str): Chemin vers le dépôt Git local.
+        github_auth_key (str): Clé d'authentification GitHub (par exemple, un token d'accès personnel).
+    """
     # Configuration du logger
     configure_logging()
     logger = logging.getLogger(__name__)
@@ -24,18 +30,16 @@ def main(git_repo_path):
     # Définition du répertoire de sortie temporaire
     output_folder = 'output'  # Répertoire temporaire pour les données
 
-    # URL du fichier JSON
-    json_url = 'https://raw.githubusercontent.com/rektosaure/framework/refs/heads/main/Data/tickers.json'
-
     # Création des instances des classes
     data_processor = DataProcessor()
     format_sauvegarde = 'csv'  # Défini en 'csv'
-    data_saver = get_data_saver(format_sauvegarde, output_folder=output_folder)
+    data_saver_class = get_data_saver(format_sauvegarde)
+    data_saver = data_saver_class(output_folder=output_folder)
 
     # Téléchargement du fichier JSON en utilisant la fabrique
     try:
         json_downloader = get_downloader('json')
-        tickers = json_downloader.download(json_url)
+        tickers = json_downloader.download(tickers_url)
     except ValueError as e:
         logger.error(f"Erreur lors du téléchargement du fichier JSON: {e}")
         return
@@ -73,8 +77,8 @@ def main(git_repo_path):
 
     # Après le traitement, uploader les données sur GitHub
     try:
-        # Initialiser le GitHubUploader avec le chemin vers votre dépôt local
-        github_uploader = GitHubUploader(repo_path=git_repo_path)
+        # Initialiser le GitHubUploader avec le chemin vers votre dépôt local et la clé d'authentification
+        github_uploader = GitHubUploader(repo_path=git_repo_path, auth_key=github_auth_key)
 
         # Copier les fichiers vers le dépôt
         github_uploader.copy_files(output_folder)

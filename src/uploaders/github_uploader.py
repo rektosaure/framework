@@ -8,14 +8,16 @@ class GitHubUploader:
     Classe pour gérer l'upload de fichiers vers GitHub.
     """
 
-    def __init__(self, repo_path):
+    def __init__(self, repo_path, auth_key):
         """
-        Initialise le GitHubUploader avec le chemin du dépôt local.
+        Initialise le GitHubUploader avec le chemin du dépôt local et la clé d'authentification.
 
         Args:
             repo_path (str): Chemin vers le dépôt Git local.
+            auth_key (str): Clé d'authentification GitHub (par exemple, un token d'accès personnel).
         """
         self.repo_path = os.path.abspath(repo_path)
+        self.auth_key = auth_key
         self.logger = logging.getLogger(self.__class__.__name__)
 
     def copy_files(self, source_folder):
@@ -48,8 +50,9 @@ class GitHubUploader:
             subprocess.check_call(['git', 'add', '.'], cwd=self.repo_path)
             # Committer les changements
             subprocess.check_call(['git', 'commit', '-m', commit_message], cwd=self.repo_path)
-            # Pusher vers le dépôt distant
-            subprocess.check_call(['git', 'push'], cwd=self.repo_path)
+            # Pusher vers le dépôt distant avec PAT
+            push_url = f'https://{self.auth_key}@github.com/votre_nom_utilisateur/votre_depot.git'
+            subprocess.check_call(['git', 'push', push_url], cwd=self.repo_path)
 
             self.logger.info("Données uploadées sur GitHub avec succès.")
         except subprocess.CalledProcessError as e:

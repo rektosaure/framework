@@ -1,3 +1,5 @@
+# src/data/data_saver.py
+
 import abc
 import os
 import pandas as pd
@@ -38,7 +40,6 @@ class DataSaver(abc.ABC):
         """
         pass
 
-
 class DataSaverCSV(DataSaver):
     """
     Classe pour sauvegarder les données traitées dans des fichiers CSV.
@@ -59,7 +60,6 @@ class DataSaverCSV(DataSaver):
         except Exception as e:
             self.logger.error(f"Erreur lors de la sauvegarde des données en CSV: {e}")
             raise ValueError(f"Erreur lors de la sauvegarde des données en CSV: {e}")
-
 
 class DataSaverJSON(DataSaver):
     """
@@ -82,14 +82,12 @@ class DataSaverJSON(DataSaver):
             self.logger.error(f"Erreur lors de la sauvegarde des données en JSON: {e}")
             raise ValueError(f"Erreur lors de la sauvegarde des données en JSON: {e}")
 
-
-def get_data_saver(format, output_folder):
+def get_data_saver(format):
     """
     Fabrique pour obtenir une instance de DataSaver appropriée en fonction du format spécifié.
 
     Args:
         format (str): Le format de sauvegarde ('csv', 'json', etc.).
-        output_folder (str): Le dossier où sauvegarder les fichiers.
 
     Returns:
         DataSaver: Une instance de DataSaver appropriée.
@@ -98,8 +96,8 @@ def get_data_saver(format, output_folder):
         ValueError: Si le format spécifié n'est pas supporté.
     """
     if format.lower() == 'csv':
-        return DataSaverCSV(output_folder)
+        return DataSaverCSV
     elif format.lower() == 'json':
-        return DataSaverJSON(output_folder)
+        return DataSaverJSON
     else:
         raise ValueError(f"Format de sauvegarde non supporté: {format}")
