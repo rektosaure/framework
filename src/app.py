@@ -1,125 +1,134 @@
-import logging
-import shutil
-import os
-import pandas as pd  # Importation de pandas
-from data import DataProcessor, get_data_saver
-from downloaders import get_downloader
-from uploaders.github_uploader import GitHubUploader  # Importation de la classe
+# src/app.py
 
-def configure_logging():
-    """
-    Configure le logger pour l'application.
-    """
+import json
+import os
+import time
+import random
+import shutil
+import logging
+import requests
+
+from downloaders.download_factory import DownloadFactory
+from processors.processor import DataProcessor
+from savers.saver import DataSaver
+from uploaders.github_uploader import GitHubUploader
+
+def load_tickers(tickers_url):
+    response = requests.get(tickers_url)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        logging.error(f"Erreur lors du téléchargement de tickers.json: Status Code {response.status_code}")
+        raise ValueError(f"Erreur lors du téléchargement de tickers.json: Status Code {response.status_code}")
+
+def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_folder):
+    # Configurer le logger
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler("logs/app.log"),
+            logging.StreamHandler()
+        ]
     )
-
-def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_folder=""):
-    """
-    Fonction principale pour télécharger, traiter, sauvegarder les données et les uploader sur GitHub.
-
-    Args:
-        tickers_url (str): URL du fichier JSON des tickers.
-        gitrepo_owner (str): Nom d'utilisateur ou organisation propriétaire du dépôt GitHub.
-        gitrepo_name (str): Nom du dépôt GitHub.
-        gitrepo_authkey (str): Token d'authentification GitHub (Personal Access Token).
-        gitrepo_folder (str): Dossier cible dans le dépôt GitHub où les fichiers seront uploadés.
-                              Par défaut, les fichiers sont uploadés à la racine du dépôt.
-    """
-    # Configuration du logger
-    configure_logging()
-    logger = logging.getLogger(__name__)
-
-    # Définition du répertoire de sortie temporaire
-    output_folder = 'output'  # Répertoire temporaire pour les données
-
-    # Création des instances des classes
-    data_processor = DataProcessor()
-    format_sauvegarde = 'csv'  # Défini en 'csv'
-    data_saver_class = get_data_saver(format_sauvegarde)
-    data_saver = data_saver_class(output_folder=output_folder)
-
-    # Téléchargement du fichier JSON en utilisant la fabrique
+    logger = logging.getLogger("App")
+    
     try:
-        json_downloader = get_downloader('json')
-        tickers = json_downloader.download(tickers_url)
-    except ValueError as e:
-        logger.error(f"Erreur lors du téléchargement du fichier JSON: {e}")
-        return
-
-    # Parcours des catégories et des entrées
-    for category_name, entries in tickers.items():
-        logger.info(f"Traitement de la catégorie : {category_name}")
-        category_df = None  # Initialiser à None pour la fusion
-        for entry in entries:
-            source = entry['Source']
-            header = entry['Header']
-            ticker = entry['Ticker']
-            frequency = entry['Frequency']
-            offset = entry['Offset']
-
-            logger.info(f"Téléchargement des données pour {header} ({ticker}) depuis {source}")
-
-            try:
-                # Obtenir le downloader approprié
-                downloader = get_downloader(source)
-
-                # Téléchargement des données
-                data = downloader.download(header, ticker)
-
-                # Ajustement des dates si nécessaire
-                data = data_processor.adjust_date(data, frequency, offset)
-
-                # Vérifier que la colonne DATE existe
-                if 'DATE' not in data.columns:
-                    logger.error(f"La colonne 'DATE' est manquante dans les données pour {header}.")
-                    continue
-
-                # Assurez-vous que la colonne DATE est au format datetime.date
-                data['DATE'] = pd.to_datetime(data['DATE']).dt.date
-
-                # Si category_df est None, initialiser avec les données actuelles
-                if category_df is None:
-                    category_df = data
-                else:
-                    # Fusionner les données sur la colonne DATE
-                    category_df = pd.merge(category_df, data, on='DATE', how='outer')
-
-            except ValueError as e:
-                logger.error(f"Erreur lors du traitement des données pour {header}: {e}")
-            except Exception as e:
-                logger.error(f"Une erreur inattendue s'est produite pour {header}: {e}")
-
-        # Sauvegarde des données de la catégorie si non vide
-        if category_df is not None and not category_df.empty:
-            # Trier les données par DATE
-            category_df.sort_values(by='DATE', inplace=True)
-            # Réinitialiser l'index
-            category_df.reset_index(drop=True, inplace=True)
-            filename = f"{category_name}.csv"
-            data_saver.save(category_df, filename)
-        else:
-            logger.warning(f"Aucune donnée à sauvegarder pour la catégorie {category_name}")
-
-    # Après le traitement, uploader les données sur GitHub
-    try:
-        # Initialiser le GitHubUploader avec les informations du dépôt et la clé d'authentification
+        # Charger les tickers depuis l'URL
+        tickers = load_tickers(tickers_url)
+        logger.info("Tickers chargés avec succès.")
+        
+        # Configurer les paramètres GitHub
         github_uploader = GitHubUploader(
-            gitrepo_owner=gitrepo_owner,
-            gitrepo_name=gitrepo_name,
-            gitrepo_authkey=gitrepo_authkey
+            repo_owner=gitrepo_owner,
+            repo_name=gitrepo_name,
+            repo_token=gitrepo_authkey
         )
-
-        # Upload des fichiers vers le dépôt GitHub
-        github_uploader.upload_files(source_folder=output_folder, gitrepo_folder=gitrepo_folder)
-
+        
+        # Initialiser les autres composants
+        data_processor = DataProcessor()
+        data_saver = DataSaver("data")
+        
+        while True:
+            logger.info("Début du processus de téléchargement et de traitement des données.")
+            
+            # Créer le répertoire de sortie
+            if os.path.exists("data"):
+                try:
+                    shutil.rmtree("data")
+                    logger.info("Répertoire 'data' supprimé.")
+                except Exception as e:
+                    logger.error(f"Erreur lors de la suppression du répertoire 'data': {e}")
+            
+            os.makedirs("data", exist_ok=True)
+            logger.info("Répertoire 'data' créé.")
+            
+            # Parcourir chaque catégorie de tickers
+            for category, ticker_info_list in tickers.items():
+                logger.info(f"Traitement de la catégorie: {category}")
+                dfs = []
+                
+                for ticker_info in ticker_info_list:
+                    header = ticker_info.get('Header')
+                    source = ticker_info.get('Source')
+                    freq = ticker_info.get('Frequency')
+                    offset = ticker_info.get('Offset')
+                    
+                    downloader = DownloadFactory.get_downloader(source)
+                    
+                    if source == 'sec':
+                        ticker_url = ticker_info.get('Ticker')
+                        df = downloader.download(header, ticker_url, freq, offset)
+                    else:
+                        ticker = ticker_info.get('Ticker')
+                        df = downloader.download(header, ticker, freq, offset)
+                    
+                    if df is not None and not df.empty:
+                        df = data_processor.adjust_date(category, source, freq, offset, df)
+                        dfs.append(df)
+                        logger.info(f"Données téléchargées et traitées pour {header} dans la catégorie {category}.")
+                    else:
+                        logger.warning(f"Aucune donnée téléchargée pour {header} dans la catégorie {category}.")
+                
+                if dfs:
+                    # Fusionner les DataFrames sur la colonne 'Date'
+                    merged_df = dfs[0]
+                    for df in dfs[1:]:
+                        merged_df = merged_df.merge(df, on='Date', how='outer')
+                    
+                    # Sauvegarder le DataFrame fusionné en CSV
+                    data_saver.save_csv(category, merged_df)
+                    logger.info(f"Données sauvegardées pour la catégorie '{category}'.")
+                else:
+                    logger.warning(f"Aucune donnée à sauvegarder pour la catégorie '{category}'.")
+            
+            # Uploader les fichiers CSV sur GitHub
+            try:
+                github_uploader.upload_files("data", gitrepo_folder)
+                logger.info("Fichiers CSV uploadés avec succès sur GitHub.")
+            except Exception as e:
+                logger.error(f"Erreur lors de l'upload sur GitHub: {e}")
+            
+            # Pause avant la prochaine exécution
+            sleep_duration = 6 * 3600  # 6 heures en secondes
+            variation = random.randint(-900, 900)  # ±15 minutes en secondes
+            total_sleep = sleep_duration + variation
+            logger.info(f"Pause de {total_sleep/3600:.2f} heures avant la prochaine exécution.")
+            time.sleep(total_sleep)
+    
     except Exception as e:
-        logger.error(f"Erreur lors de l'upload sur GitHub: {e}")
+        logger.error(f"Erreur critique dans l'application: {e}")
 
-    # Supprimer le répertoire temporaire
-    try:
-        shutil.rmtree(output_folder)
-        logger.info(f"Le répertoire temporaire '{output_folder}' a été supprimé.")
-    except Exception as e:
-        logger.error(f"Erreur lors de la suppression du répertoire temporaire '{output_folder}': {e}")
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) != 6:
+        print("Usage: python src/app.py <tickers_url> <gitrepo_owner> <gitrepo_name> <gitrepo_authkey> <gitrepo_folder>")
+        sys.exit(1)
+    
+    tickers_url = sys.argv[1]
+    gitrepo_owner = sys.argv[2]
+    gitrepo_name = sys.argv[3]
+    gitrepo_authkey = sys.argv[4]
+    gitrepo_folder = sys.argv[5]
+    
+    main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_folder)
