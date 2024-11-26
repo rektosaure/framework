@@ -10,7 +10,7 @@ class DataProcessor:
         """
         Initialise le DataProcessor avec une configuration de journalisation.
         """
-        self.logger = logging.getLogger(__name__)
+        self.logger = logging.getLogger(self.__class__.__name__)
 
     def adjust_date(self, data, frequency, offset):
         """
@@ -24,7 +24,6 @@ class DataProcessor:
         Returns:
             pd.DataFrame: Le DataFrame avec les dates ajustées.
         """
-
         try:
             data = data.copy()
             data.index = pd.to_datetime(data.index)  # Assure que l'index est de type DateTime
@@ -46,7 +45,6 @@ class DataProcessor:
 
             self.logger.info("Dates ajustées avec succès.")
             return data
-
         except Exception as e:
             self.logger.error(f"Erreur lors de l'ajustement des dates: {e}")
             raise ValueError(f"Erreur lors de l'ajustement des dates: {e}")

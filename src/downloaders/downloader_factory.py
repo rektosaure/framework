@@ -1,11 +1,12 @@
-from downloaders import FredDownloader, JSONDownloader
+from .fred_downloader import FredDownloader
+from .json_downloader import JSONDownloader
 
 def get_downloader(source):
     """
     Fabrique pour obtenir une instance de DataDownloader appropriée en fonction de la source spécifiée.
 
     Args:
-        source (str): La source des données ('fred', 'yfinance', etc.).
+        source (str): La source des données ('fred', 'json', etc.).
 
     Returns:
         DataDownloader: Une instance de DataDownloader appropriée.
@@ -17,7 +18,5 @@ def get_downloader(source):
         return FredDownloader()
     elif source == 'json':
         return JSONDownloader()
-    # elif source == 'yfinance':
-    #     return YFinanceDownloader()
     else:
         raise ValueError(f"Source non supportée : {source}")

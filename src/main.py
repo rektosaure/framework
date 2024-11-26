@@ -1,8 +1,6 @@
-# main.py
-
 import logging
-from downloader_factory import get_downloader
-from data import DataProcessor, get_data_saver  # Import mis à jour
+from data import DataProcessor, get_data_saver
+from downloaders import get_downloader
 
 def configure_logging():
     """
@@ -19,14 +17,14 @@ def main():
     logger = logging.getLogger(__name__)
 
     # URL du fichier JSON
-    json_url = 'https://raw.githubusercontent.com/rektosaure/framework/refs/heads/main/tickers.json'
+    json_url = 'https://raw.githubusercontent.com/rektosaure/framework/refs/heads/main/Data/tickers.json'
 
     # Création des instances des classes
     data_processor = DataProcessor()
 
     # Choix du format de sauvegarde
     format_sauvegarde = 'csv'  # Peut être 'csv' ou 'json'
-    data_saver = get_data_saver(format_sauvegarde, output_folder='data')
+    data_saver = get_data_saver(format_sauvegarde, output_folder='../data')
 
     # Téléchargement du fichier JSON en utilisant la fabrique
     try:

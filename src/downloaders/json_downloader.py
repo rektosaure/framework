@@ -1,5 +1,4 @@
 import requests
-import logging
 from .data_downloader import DataDownloader
 
 class JSONDownloader(DataDownloader):

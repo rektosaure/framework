@@ -10,16 +10,10 @@ class DataDownloader(abc.ABC):
         self.logger = logging.getLogger(self.__class__.__name__)
 
     @abc.abstractmethod
-    def download(self, header, ticker, frequency=None):
+    def download(self, *args, **kwargs):
         """
         Méthode abstraite pour télécharger les données.
 
-        Args:
-            header (str): Nom de la colonne pour les données téléchargées.
-            ticker (str): Symbole du ticker à télécharger.
-            frequency (str, optional): Fréquence des données.
-
-        Returns:
-            pandas.DataFrame: DataFrame contenant les données téléchargées.
+        Doit être implémentée par les classes dérivées.
         """
         pass
