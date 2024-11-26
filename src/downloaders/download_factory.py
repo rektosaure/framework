@@ -15,6 +15,24 @@ class DownloadFactory:
 
     @staticmethod
     def get_downloader(source):
+        """
+        Retourne une instance du downloader correspondant à la source spécifiée.
+
+        Parameters
+        ----------
+        source : str
+            La source des données (ex. 'fred', 'yfinance', etc.).
+
+        Returns
+        -------
+        Downloader
+            Une instance de la classe downloader appropriée.
+
+        Raises
+        ------
+        ValueError
+            Si la source spécifiée n'est pas prise en charge.
+        """
         if source == 'fred':
             return FredDownloader()
         elif source == 'yfinance':

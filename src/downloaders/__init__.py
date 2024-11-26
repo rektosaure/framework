@@ -8,6 +8,8 @@ from .ycharts_downloader import YChartsDownloader
 from .cftc_downloader import CftcDownloader
 from .empty_downloader import EmptyDownloader
 
+from .download_factory import DownloadFactory
+
 __all__ = [
     'FredDownloader',
     'YFinanceDownloader',
@@ -15,5 +17,6 @@ __all__ = [
     'InvestingDownloader',
     'YChartsDownloader',
     'CftcDownloader',
-    'EmptyDownloader'
+    'EmptyDownloader',
+    'DownloadFactory'
 ]
