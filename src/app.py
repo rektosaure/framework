@@ -1,6 +1,5 @@
 # src/app.py
 
-import json
 import os
 import time
 import random
@@ -8,10 +7,10 @@ import shutil
 import logging
 import requests
 
-from downloaders.download_factory import DownloadFactory
-from processors.processor import DataProcessor
-from savers.saver import DataSaver
-from uploaders.github_uploader import GitHubUploader
+from downloaders import DownloadFactory
+from processors import DataProcessor
+from savers import DataSaver
+from uploaders import GitHubUploader
 
 def load_tickers(tickers_url):
     response = requests.get(tickers_url)
