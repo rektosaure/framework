@@ -14,14 +14,17 @@ def configure_logging():
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
-def main(tickers_url, git_repo_path, github_auth_key):
+def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_folder=""):
     """
     Fonction principale pour télécharger, traiter, sauvegarder les données et les uploader sur GitHub.
 
     Args:
         tickers_url (str): URL du fichier JSON des tickers.
-        git_repo_path (str): Chemin vers le dépôt Git local.
-        github_auth_key (str): Clé d'authentification GitHub (par exemple, un token d'accès personnel).
+        gitrepo_owner (str): Nom d'utilisateur ou organisation propriétaire du dépôt GitHub.
+        gitrepo_name (str): Nom du dépôt GitHub.
+        gitrepo_authkey (str): Token d'authentification GitHub (Personal Access Token).
+        gitrepo_folder (str): Dossier cible dans le dépôt GitHub où les fichiers seront uploadés.
+                              Par défaut, les fichiers sont uploadés à la racine du dépôt.
     """
     # Configuration du logger
     configure_logging()
@@ -77,14 +80,15 @@ def main(tickers_url, git_repo_path, github_auth_key):
 
     # Après le traitement, uploader les données sur GitHub
     try:
-        # Initialiser le GitHubUploader avec le chemin vers votre dépôt local et la clé d'authentification
-        github_uploader = GitHubUploader(repo_path=git_repo_path, auth_key=github_auth_key)
+        # Initialiser le GitHubUploader avec les informations du dépôt et la clé d'authentification
+        github_uploader = GitHubUploader(
+            gitrepo_owner=gitrepo_owner,
+            gitrepo_name=gitrepo_name,
+            gitrepo_authkey=gitrepo_authkey
+        )
 
-        # Copier les fichiers vers le dépôt
-        github_uploader.copy_files(output_folder)
-
-        # Commit et push des changements
-        github_uploader.commit_and_push(commit_message="Mise à jour des données")
+        # Upload des fichiers vers le dépôt GitHub
+        github_uploader.upload_files(source_folder=output_folder, gitrepo_folder=gitrepo_folder)
 
     except Exception as e:
         logger.error(f"Erreur lors de l'upload sur GitHub: {e}")
