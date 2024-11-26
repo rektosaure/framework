@@ -27,6 +27,9 @@ class SecDownloader:
                 data = response.text.strip().split('\n')
                 tickers = [line.split('\t') for line in data if line]
                 df = pd.DataFrame(tickers, columns=['CIK', 'Ticker'])
+                # Ajouter une colonne DATE avec la date actuelle ou une logique appropriée
+                df['DATE'] = pd.to_datetime('today').date()
+                # Renommer la colonne 'CIK' en 'header'
                 df.rename(columns={'CIK': header}, inplace=True)
                 return df
             else:

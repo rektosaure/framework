@@ -1,9 +1,10 @@
 import logging
 import shutil
 import os
+import pandas as pd  # Importation de pandas
 from data import DataProcessor, get_data_saver
 from downloaders import get_downloader
-from uploaders.github_uploader import GitHubUploader
+from uploaders.github_uploader import GitHubUploader  # Importation de la classe
 
 def configure_logging():
     """
@@ -47,13 +48,10 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
         logger.error(f"Erreur lors du téléchargement du fichier JSON: {e}")
         return
 
-    # Dictionnaire pour stocker les DataFrames par catégorie
-    category_data = {}
-
     # Parcours des catégories et des entrées
     for category_name, entries in tickers.items():
         logger.info(f"Traitement de la catégorie : {category_name}")
-        category_df = pd.DataFrame()  # DataFrame vide pour la catégorie
+        category_df = None  # Initialiser à None pour la fusion
         for entry in entries:
             source = entry['Source']
             header = entry['Header']
@@ -73,8 +71,20 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
                 # Ajustement des dates si nécessaire
                 data = data_processor.adjust_date(data, frequency, offset)
 
-                # Ajout des données au DataFrame de la catégorie
-                category_df = pd.concat([category_df, data], ignore_index=True)
+                # Vérifier que la colonne DATE existe
+                if 'DATE' not in data.columns:
+                    logger.error(f"La colonne 'DATE' est manquante dans les données pour {header}.")
+                    continue
+
+                # Assurez-vous que la colonne DATE est au format datetime.date
+                data['DATE'] = pd.to_datetime(data['DATE']).dt.date
+
+                # Si category_df est None, initialiser avec les données actuelles
+                if category_df is None:
+                    category_df = data
+                else:
+                    # Fusionner les données sur la colonne DATE
+                    category_df = pd.merge(category_df, data, on='DATE', how='outer')
 
             except ValueError as e:
                 logger.error(f"Erreur lors du traitement des données pour {header}: {e}")
@@ -82,7 +92,11 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
                 logger.error(f"Une erreur inattendue s'est produite pour {header}: {e}")
 
         # Sauvegarde des données de la catégorie si non vide
-        if not category_df.empty:
+        if category_df is not None and not category_df.empty:
+            # Trier les données par DATE
+            category_df.sort_values(by='DATE', inplace=True)
+            # Réinitialiser l'index
+            category_df.reset_index(drop=True, inplace=True)
             filename = f"{category_name}.csv"
             data_saver.save(category_df, filename)
         else:

@@ -26,8 +26,11 @@ class FredDownloader:
             start = datetime(2000, 1, 1)
             end = datetime.now()
             df = web.DataReader(ticker, 'fred', start, end)
-            df.rename(columns={ticker: header}, inplace=True)
             df.reset_index(inplace=True)
+            # Convertir la colonne 'DATE' en date sans l'heure
+            df['DATE'] = pd.to_datetime(df['DATE']).dt.date
+            # Renommer la colonne du ticker en 'header'
+            df.rename(columns={ticker: header}, inplace=True)
             return df
         except Exception as e:
             self.logger.error(f"Erreur lors du téléchargement des données FRED pour {ticker}: {e}")
