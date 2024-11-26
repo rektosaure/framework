@@ -1,5 +1,3 @@
-# src/data/data_saver.py
-
 import abc
 import os
 import pandas as pd
@@ -55,7 +53,7 @@ class DataSaverCSV(DataSaver):
         """
         try:
             file_path = os.path.join(self.output_folder, filename)
-            data.to_csv(file_path)
+            data.to_csv(file_path, index=False)
             self.logger.info(f"Données sauvegardées dans {file_path}")
         except Exception as e:
             self.logger.error(f"Erreur lors de la sauvegarde des données en CSV: {e}")

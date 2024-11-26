@@ -3,7 +3,7 @@ import shutil
 import os
 from data import DataProcessor, get_data_saver
 from downloaders import get_downloader
-from uploaders.github_uploader import GitHubUploader  # Importation de la classe
+from uploaders.github_uploader import GitHubUploader
 
 def configure_logging():
     """
@@ -47,9 +47,13 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
         logger.error(f"Erreur lors du téléchargement du fichier JSON: {e}")
         return
 
+    # Dictionnaire pour stocker les DataFrames par catégorie
+    category_data = {}
+
     # Parcours des catégories et des entrées
     for category_name, entries in tickers.items():
         logger.info(f"Traitement de la catégorie : {category_name}")
+        category_df = pd.DataFrame()  # DataFrame vide pour la catégorie
         for entry in entries:
             source = entry['Source']
             header = entry['Header']
@@ -69,14 +73,20 @@ def main(tickers_url, gitrepo_owner, gitrepo_name, gitrepo_authkey, gitrepo_fold
                 # Ajustement des dates si nécessaire
                 data = data_processor.adjust_date(data, frequency, offset)
 
-                # Sauvegarde des données
-                filename = f"{category_name}_{header}.csv"
-                data_saver.save(data, filename)
+                # Ajout des données au DataFrame de la catégorie
+                category_df = pd.concat([category_df, data], ignore_index=True)
 
             except ValueError as e:
                 logger.error(f"Erreur lors du traitement des données pour {header}: {e}")
             except Exception as e:
                 logger.error(f"Une erreur inattendue s'est produite pour {header}: {e}")
+
+        # Sauvegarde des données de la catégorie si non vide
+        if not category_df.empty:
+            filename = f"{category_name}.csv"
+            data_saver.save(category_df, filename)
+        else:
+            logger.warning(f"Aucune donnée à sauvegarder pour la catégorie {category_name}")
 
     # Après le traitement, uploader les données sur GitHub
     try:
