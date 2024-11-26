@@ -8,7 +8,7 @@ class DataSaver(abc.ABC):
     Classe de base abstraite pour sauvegarder les données traitées.
     """
 
-    def __init__(self, output_folder='../data'):
+    def __init__(self, output_folder):
         """
         Initialise le DataSaver avec le dossier de sortie spécifié.
 
@@ -38,6 +38,7 @@ class DataSaver(abc.ABC):
         """
         pass
 
+
 class DataSaverCSV(DataSaver):
     """
     Classe pour sauvegarder les données traitées dans des fichiers CSV.
@@ -58,6 +59,7 @@ class DataSaverCSV(DataSaver):
         except Exception as e:
             self.logger.error(f"Erreur lors de la sauvegarde des données en CSV: {e}")
             raise ValueError(f"Erreur lors de la sauvegarde des données en CSV: {e}")
+
 
 class DataSaverJSON(DataSaver):
     """
@@ -80,7 +82,8 @@ class DataSaverJSON(DataSaver):
             self.logger.error(f"Erreur lors de la sauvegarde des données en JSON: {e}")
             raise ValueError(f"Erreur lors de la sauvegarde des données en JSON: {e}")
 
-def get_data_saver(format, output_folder='../data'):
+
+def get_data_saver(format, output_folder):
     """
     Fabrique pour obtenir une instance de DataSaver appropriée en fonction du format spécifié.
 

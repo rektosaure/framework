@@ -19,6 +19,7 @@ class JSONDownloader(DataDownloader):
         Raises:
             ValueError: Si une erreur se produit lors du téléchargement ou du chargement du fichier JSON.
         """
+
         try:
             self.logger.info(f"Téléchargement du fichier JSON depuis {url}")
             response = requests.get(url)
@@ -26,9 +27,11 @@ class JSONDownloader(DataDownloader):
             tickers = response.json()
             self.logger.info("Fichier JSON téléchargé et chargé avec succès.")
             return tickers
+
         except requests.exceptions.HTTPError as http_err:
             self.logger.error(f"Erreur HTTP lors du téléchargement du fichier JSON: {http_err}")
             raise ValueError(f"Erreur HTTP lors du téléchargement du fichier JSON: {http_err}")
+
         except Exception as err:
             self.logger.error(f"Une erreur s'est produite lors du téléchargement ou du chargement du fichier JSON: {err}")
             raise ValueError(f"Une erreur s'est produite lors du téléchargement ou du chargement du fichier JSON: {err}")

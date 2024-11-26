@@ -24,6 +24,7 @@ class DataProcessor:
         Returns:
             pd.DataFrame: Le DataFrame avec les dates ajustées.
         """
+
         try:
             data = data.copy()
             data.index = pd.to_datetime(data.index)  # Assure que l'index est de type DateTime
@@ -45,6 +46,7 @@ class DataProcessor:
 
             self.logger.info("Dates ajustées avec succès.")
             return data
+
         except Exception as e:
             self.logger.error(f"Erreur lors de l'ajustement des dates: {e}")
             raise ValueError(f"Erreur lors de l'ajustement des dates: {e}")
