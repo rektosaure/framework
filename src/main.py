@@ -19,7 +19,7 @@ def main():
     logger = logging.getLogger(__name__)
 
     # URL du fichier JSON
-    json_url = 'https://raw.githubusercontent.com/rektosaure/framework/refs/heads/main/Data/tickers.json'
+    json_url = 'https://raw.githubusercontent.com/rektosaure/framework/refs/heads/main/tickers.json'
 
     # Création des instances des classes
     data_processor = DataProcessor()
