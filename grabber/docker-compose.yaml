@@ -1,8 +1,0 @@
-services:
-  sharpitpm:
-    container_name: sharpitpm_live
-    image: "necksus/sharpitpm.arm32:latest"
-    volumes:
-      - "~/data:/data"
-    ports:
-      - "1337:80"
